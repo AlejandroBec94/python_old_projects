@@ -1,0 +1,24 @@
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+
+#ejemplo="Hola como estan todos por ahi."
+example="This is an example showing off stop word filtration."
+stop_words=set(stopwords.words("english"))
+#stop_words=set(stopwords.words("spanish"))
+#print(stop_words)
+
+words=word_tokenize(example)
+
+"""
+filtered_sentence=[]
+for w in words :
+	if w not in stop_words:
+		filtered_sentence.append(w)
+
+
+print (filtered_sentence)
+
+"""
+
+filtered_sentence=[w for w in words if not w in stop_words]
+print (filtered_sentence)
